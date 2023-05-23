@@ -1,10 +1,11 @@
-function App() {
+import Input from './shared/ui/Input/Input'
 
-  return (
-    <>
-      Hello
-    </>
-  )
+function App() {
+    return (
+        <>
+            <Input propsValue="asd" />
+        </>
+    )
 }
 
 export default App
