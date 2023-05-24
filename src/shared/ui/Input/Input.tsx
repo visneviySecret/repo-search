@@ -1,7 +1,13 @@
 import { InputComponent } from './Input.style'
 import { useState } from 'react'
+import CSS from 'csstype'
 
-function Input({ propsValue }: { propsValue: string }) {
+interface IInput {
+    propsValue: string
+    style?: CSS.Properties
+}
+
+function Input({ propsValue, style }: IInput) {
     const [value, setValue] = useState(propsValue)
 
     const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -14,6 +20,7 @@ function Input({ propsValue }: { propsValue: string }) {
                 placeholder="Enter repository name"
                 value={value}
                 onChange={handleChange}
+                style={style}
             />
         </div>
     )
