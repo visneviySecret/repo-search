@@ -1,20 +1,16 @@
-import { useEffect } from 'react'
 import Input from '@/shared/ui/Input/Input'
-import { getRepos } from './api'
 
-function SearchBar() {
-    useEffect(() => {
-        fetching()
-    }, [])
+interface IProps {
+    value: string
+    onClick: () => void
+    onChange: (value: React.ChangeEvent<HTMLInputElement>) => void
+}
 
-    const fetching = async () => {
-        const data = await getRepos()
-        console.log(data)
-    }
-
+function SearchBar({ value, onClick, onChange }: IProps) {
     return (
         <>
-            <Input propsValue="asd" />
+            <Input value={value} onChange={onChange} />
+            <button onClick={onClick} />
         </>
     )
 }

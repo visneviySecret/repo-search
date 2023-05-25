@@ -1,28 +1,20 @@
 import { InputComponent } from './Input.style'
-import { useState } from 'react'
 import CSS from 'csstype'
 
 interface IInput {
-    propsValue: string
+    value: string
+    onChange: (value: React.ChangeEvent<HTMLInputElement>) => void
     style?: CSS.Properties
 }
 
-function Input({ propsValue, style }: IInput) {
-    const [value, setValue] = useState(propsValue)
-
-    const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-        setValue(event.currentTarget.value)
-    }
-
+function Input({ value, onChange, style }: IInput) {
     return (
-        <div>
-            <InputComponent
-                placeholder="Enter repository name"
-                value={value}
-                onChange={handleChange}
-                style={style}
-            />
-        </div>
+        <InputComponent
+            placeholder="Enter repository name"
+            value={value}
+            onChange={onChange}
+            style={style}
+        />
     )
 }
 
