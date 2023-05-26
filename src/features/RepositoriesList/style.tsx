@@ -14,7 +14,6 @@ const colors = [
 ]
 
 const generateColor = (page: number) => {
-    console.log(colors[page])
     return colors[page]
 }
 

@@ -4,7 +4,7 @@ import { getRepositoriesListFx } from '@/entities/getReposListFx'
 
 export const getAsyncRepositories = (query?: string) => {
     return async (dispatch: AppDispatch) => {
-        const result = await getRepositoriesListFx(query)
+        const result = await getRepositoriesListFx(dispatch, query)
         dispatch(setStoreRepositories(result))
     }
 }
