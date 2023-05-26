@@ -5,6 +5,10 @@ export const Title = styled.h3`
     font-size: 2rem;
 `
 
+export const ListWrapper = styled.div`
+    min-height: 350px;
+`
+
 export const List = styled.ul`
     background-color: #f1cece;
     border-radius: 2rem;

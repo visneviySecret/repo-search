@@ -1,4 +1,4 @@
-import { InputComponent } from './Input.style'
+import { InputComponent } from './style'
 import CSS from 'csstype'
 
 interface IInput {
