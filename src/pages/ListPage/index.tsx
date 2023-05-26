@@ -1,4 +1,4 @@
-import RepositoriesList from '@/features/RepositoriesList/RepositoriesList'
+import RepositoriesList from '@/features/RepositoriesList'
 import SearchRepository from '@/features/SearchRepository'
 
 function ListPage() {
