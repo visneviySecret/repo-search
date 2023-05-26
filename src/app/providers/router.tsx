@@ -3,11 +3,11 @@ import ListPage from '../../pages/ListPage/index'
 import ErrorPage from '../../pages/ErrorPage'
 import CardPage from '../../pages/CardPage/index'
 import { createBrowserRouter } from 'react-router-dom'
-export const baseUrl = '/'
+export const baseUrl = ''
 
 export const router = createBrowserRouter([
     {
-        path: baseUrl,
+        path: `${baseUrl}/`,
         element: <App />,
     },
     {
