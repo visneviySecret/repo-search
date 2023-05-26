@@ -1,7 +1,7 @@
 import App from '../../pages/HomePage'
-import RepoList from '../../pages/RepoList/index'
+import ListPage from '../../pages/ListPage/index'
 import ErrorPage from '../../pages/ErrorPage'
-import RepoCard from '../../pages/RepoCard/index'
+import CardPage from '../../pages/CardPage/index'
 import { createBrowserRouter } from 'react-router-dom'
 export const baseUrl = '/'
 
@@ -12,11 +12,11 @@ export const router = createBrowserRouter([
     },
     {
         path: `${baseUrl}/repo-list`,
-        element: <RepoList />,
+        element: <ListPage />,
     },
     {
         path: `${baseUrl}/repo-list/:repoId`,
-        element: <RepoCard />,
+        element: <CardPage />,
         errorElement: <ErrorPage />,
     },
 ])

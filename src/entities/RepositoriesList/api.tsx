@@ -1,5 +1,5 @@
 import { GITHUB_TOKEN, apiUrl } from '@/app/api'
-import { IRepoNode } from './types'
+import { IRepositoryNode } from './types'
 
 const requestBody = `
   query ($query: String!){
@@ -38,7 +38,7 @@ export const getRepos = async () => {
 
     const data = await res.json()
     const repositories = data.data.search.edges.map(
-        (edge: { node: IRepoNode }) => edge.node
+        (edge: { node: IRepositoryNode }) => edge.node
     )
     return repositories
 }
