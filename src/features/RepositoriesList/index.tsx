@@ -19,9 +19,15 @@ function RepoList() {
 
     return (
         <List>
-            {repositories.map((repo: IRepositoryNode) => (
-                <ListRow key={repo.name} repo={repo} />
-            ))}
+            {repositories.length ? (
+                repositories.map((repo: IRepositoryNode) => (
+                    <ListRow key={repo.name} repo={repo} />
+                ))
+            ) : (
+                <div>
+                    Here is no repositories for this request, try another one!
+                </div>
+            )}
         </List>
     )
 }
