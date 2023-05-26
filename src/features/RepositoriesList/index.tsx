@@ -23,7 +23,7 @@ function RepoList() {
         <>
             <Title>GitHub repositories of user: {user}</Title>
             <ListWrapper>
-                <List>
+                <List page={page}>
                     {repositories.length ? (
                         repositories
                             .slice(
