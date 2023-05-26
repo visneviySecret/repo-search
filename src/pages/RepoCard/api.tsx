@@ -2,28 +2,27 @@ import { GITHUB_TOKEN, apiUrl } from '@/app/api'
 import { IRepoNode } from './types'
 
 const requestBody = `
-  query ($query: String!){
-    search(query: $query, type: REPOSITORY, first: 100) {
-      edges {
-        node {
-          ... on Repository {
+    query ($url: URI!) {
+      repository(owner: "", name: "") { 
+        name
+        stargazerCount
+        pushedAt
+        owner {
+          avatarUrl
+          login
+        }
+        languages(first: 5) {
+          nodes {
             name
-            stargazerCount
-            url
-            pushedAt
           }
         }
+        description
       }
     }
-  }
-`
+  `
 
-export const getRepos = async () => {
-    const repositoryName = ''
-    const username = 'visneviySecret'
-    const query = `user:${username} ${repositoryName}`
-    const variables = { query }
-
+export const getRepo = async (url: string) => {
+    const variables = { url }
     const res = await fetch(apiUrl, {
         method: 'POST',
         headers: {
@@ -40,5 +39,6 @@ export const getRepos = async () => {
     const repositories = data.data.search.edges.map(
         (edge: { node: IRepoNode }) => edge.node
     )
+
     return repositories
 }
