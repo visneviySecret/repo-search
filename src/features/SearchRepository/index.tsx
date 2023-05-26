@@ -16,7 +16,7 @@ function SearchRepository() {
     useEffect(() => {
         setTimeout(() => {
             dispatch(getAsyncRepositories(query))
-        }, 300)
+        }, 100)
     }, [query, dispatch])
 
     return <SearchBar value={query} onChange={handleChange} />
