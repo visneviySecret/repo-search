@@ -1,21 +1,11 @@
 import { useEffect } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { List } from './style'
-import { getRepositoriesListFx } from '@/entities/getReposListFx'
 import { IRepositoryNode } from '@/entities/getReposListFx/types'
 import ListRow from './ui/ListRow'
-import {
-    selectRepositories,
-    setStoreRepositories,
-} from '@/app/store/repositories/repositoriesSlice'
+import { selectRepositories } from '@/app/store/repositories/repositoriesSlice'
 import { AppDispatch } from '@/app/store/store'
-
-const getAsyncRepositories = () => {
-    return async (dispatch: AppDispatch) => {
-        const result = await getRepositoriesListFx()
-        dispatch(setStoreRepositories(result))
-    }
-}
+import { getAsyncRepositories } from '@/app/store/repositories/getAsyncRepositories'
 
 function RepoList() {
     const perPage = 10
