@@ -1,25 +1,22 @@
-import { IRepositoryNode } from './types'
 import { useEffect, useState } from 'react'
-import { getRepos } from './api'
 import { List, Repository } from './RepositoriesList.style'
+import { getRepositoriesListFx } from '@/entities/getReposListFx'
+import { IRepositoryNode } from '@/entities/getReposListFx/types'
 
 function RepoList() {
-    const [repositories, setRepos] = useState([])
+    const [repositories, setRepositories] = useState<IRepositoryNode[] | []>([])
     const perPage = 10
     const page = 0
 
     useEffect(() => {
-        getReposList()
+        getRepositories()
     }, [])
 
-    const getReposList = async () => {
-        try {
-            const repositories = await getRepos()
-            setRepos(repositories)
-        } catch (err) {
-            throw new Error('Error while fetching')
-        }
+    const getRepositories = async () => {
+        const result = await getRepositoriesListFx()
+        setRepositories(result)
     }
+
     return (
         <List>
             {repositories.map((repo: IRepositoryNode) => (

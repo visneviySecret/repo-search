@@ -1,7 +1,8 @@
-import SearchBar from '@/entities/SearchBar/SearchBar'
+import SearchBar from '@/entities/SearchBar/index'
 import { useState } from 'react'
+import { getRepositoriesListFx } from '@/entities/getReposListFx'
 
-function SearchRepo() {
+function SearchRepository() {
     const [query, setQuery] = useState('')
 
     const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -9,7 +10,7 @@ function SearchRepo() {
     }
 
     const handleClick = () => {
-        console.log('useSearch')
+        getRepositoriesListFx(query)
     }
 
     return (
@@ -21,4 +22,4 @@ function SearchRepo() {
     )
 }
 
-export default SearchRepo
+export default SearchRepository

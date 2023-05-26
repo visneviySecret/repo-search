@@ -18,8 +18,7 @@ const requestBody = `
   }
 `
 
-export const getRepos = async () => {
-    const repositoryName = ''
+export const getRepositories = async (repositoryName = '') => {
     const username = 'visneviySecret'
     const query = `user:${username} ${repositoryName}`
     const variables = { query }

@@ -1,9 +1,11 @@
-import RepoList from '@/entities/RepositoriesList/RepositoriesList'
+import RepositoriesList from '@/features/RepositoriesList/RepositoriesList'
+import SearchRepository from '@/features/SearchRepository'
 
 function ListPage() {
     return (
         <div>
-            <RepoList />
+            <SearchRepository />
+            <RepositoriesList />
         </div>
     )
 }
