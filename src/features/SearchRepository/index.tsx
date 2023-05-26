@@ -1,3 +1,4 @@
+import { useEffect } from 'react'
 import SearchBar from '@/entities/SearchBar/index'
 import { useState } from 'react'
 import { getAsyncRepositories } from '@/app/store/repositories/getAsyncRepositories'
@@ -12,17 +13,13 @@ function SearchRepository() {
         setQuery(event.currentTarget.value)
     }
 
-    const handleClick = () => {
-        dispatch(getAsyncRepositories(query))
-    }
+    useEffect(() => {
+        setTimeout(() => {
+            dispatch(getAsyncRepositories(query))
+        }, 300)
+    }, [query, dispatch])
 
-    return (
-        <SearchBar
-            value={query}
-            onChange={handleChange}
-            onClick={handleClick}
-        />
-    )
+    return <SearchBar value={query} onChange={handleChange} />
 }
 
 export default SearchRepository
