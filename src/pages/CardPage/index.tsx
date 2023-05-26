@@ -1,7 +1,11 @@
-import React from 'react'
+import RepositoryCard from '@/features/RepositoryCard'
 
 function CardPage() {
-    return <div>RepositoryCardPage</div>
+    return (
+        <div>
+            <RepositoryCard />
+        </div>
+    )
 }
 
 export default CardPage

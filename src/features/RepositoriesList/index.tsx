@@ -12,8 +12,7 @@ import { AppDispatch } from '@/app/store/store'
 import { getAsyncRepositories } from '@/app/store/repositories/getAsyncRepositories'
 import Pagination from '@/entities/Pagination'
 import Loader from '@/shared/ui/Loader'
-
-const user = 'visneviySecret'
+import { user } from '@/entities/getRepository/api'
 
 function RepositoriesList() {
     const dispatch = useDispatch<AppDispatch>()
