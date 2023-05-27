@@ -1,5 +1,5 @@
 import RepositoryCard from '@/features/RepositoryCard'
-import BackButton from './ui/BackButton'
+import BackButton from '@/shared/ui/BackButton'
 
 function CardPage() {
     return (
