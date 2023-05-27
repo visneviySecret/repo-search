@@ -20,11 +20,7 @@ function RepositoryCard() {
 
     if (!repository) return <Loader />
 
-    return (
-        <div>
-            <Card repository={repository} />
-        </div>
-    )
+    return <Card repository={repository} />
 }
 
 export default RepositoryCard
