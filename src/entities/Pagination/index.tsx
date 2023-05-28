@@ -15,6 +15,7 @@ function Pagination({ elements, setPage, activePage }: IProps) {
 
     const handleClick = (page: number) => {
         setPage(page)
+        sessionStorage.setItem('repositories_list_page', page.toString())
     }
 
     return (

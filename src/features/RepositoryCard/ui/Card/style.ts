@@ -1,8 +1,7 @@
 import { styled } from 'styled-components'
 
 export const CardWrapper = styled.div`
-    max-width: 500px;
-    margin: 0 auto;
+    width: 100%;
     background-color: #f6c6c6;
     padding: 20px;
     border-radius: 15px;

@@ -18,7 +18,9 @@ const requestBody = `
   }
 `
 
-export const getRepositories = async (repositoryName = '') => {
+export const getRepositories = async (
+    repositoryName = sessionStorage.getItem('github_api_query') || ''
+) => {
     const username = 'visneviySecret'
     const query = `user:${username} ${repositoryName}`
     const variables = { query }
