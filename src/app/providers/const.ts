@@ -1,7 +1,7 @@
-export const baseUrl = ''
+export const baseUrl = 'repo-search'
 
 export const Routes = {
     homePage: `${baseUrl}/`,
-    repositories: `${baseUrl}/repositories`,
+    repositories: `/repositories`,
     repository: `${baseUrl}/repositories/:repoId`,
 }

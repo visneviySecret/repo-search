@@ -1,4 +1,3 @@
-import { baseUrl } from '@/app/providers/const'
 import { Link, useLocation } from 'react-router-dom'
 
 function BackButton() {
@@ -7,13 +6,13 @@ function BackButton() {
     const getLink = () => {
         const index = query.lastIndexOf('/')
         const addedUrl = query.slice(0, index)
-        return `${baseUrl}${addedUrl}/`
+        return `${addedUrl}/`
     }
 
     return (
-        <button style={{ marginBottom: '50px' }}>
-            <Link to={getLink()}>Go back!</Link>
-        </button>
+        <Link to={getLink()}>
+            <button style={{ marginBottom: '50px' }}>Go back!</button>
+        </Link>
     )
 }
 
