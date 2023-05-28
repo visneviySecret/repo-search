@@ -15,7 +15,7 @@ export const router = createBrowserRouter([
         element: <ListPage />,
     },
     {
-        path: `${Routes.repositories}/:repoId`,
+        path: Routes.repository,
         element: <CardPage />,
         errorElement: <ErrorPage />,
     },
