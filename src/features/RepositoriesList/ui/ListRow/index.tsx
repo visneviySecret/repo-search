@@ -1,11 +1,11 @@
 import { IRepositoryNode } from '@/entities/getReposListFx/types'
 import { Repository } from './style'
 import { Link } from 'react-router-dom'
-import { baseUrl } from '@/app/providers/router'
+import { Routes } from '@/app/providers/const'
 
 function ListRow({ repo }: { repo: IRepositoryNode }) {
     const getLink = (id: string) => {
-        return `${baseUrl}/repo-list/${id}`
+        return `${Routes.repositories}/${id}`
     }
 
     return (

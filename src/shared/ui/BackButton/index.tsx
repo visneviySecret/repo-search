@@ -1,4 +1,4 @@
-import { baseUrl } from '@/app/providers/router'
+import { baseUrl } from '@/app/providers/const'
 import { Link, useLocation } from 'react-router-dom'
 
 function BackButton() {

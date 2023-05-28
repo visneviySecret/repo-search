@@ -1,9 +1,10 @@
+import { Routes } from '@/app/providers/const'
 import { Link } from 'react-router-dom'
 
 function ErrorPage() {
     return (
         <div>
-            <Link to={'/'}>Go back to home page!</Link>
+            <Link to={Routes.homePage}>Go back to home page!</Link>
         </div>
     )
 }

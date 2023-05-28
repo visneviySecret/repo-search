@@ -1,21 +1,21 @@
-import App from '../../pages/HomePage'
+import HomePage from '../../pages/HomePage'
 import ListPage from '../../pages/ListPage/index'
 import ErrorPage from '../../pages/ErrorPage'
 import CardPage from '../../pages/CardPage/index'
 import { createBrowserRouter } from 'react-router-dom'
-export const baseUrl = ''
+import { Routes, baseUrl } from './const'
 
 export const router = createBrowserRouter([
     {
         path: `${baseUrl}/`,
-        element: <App />,
+        element: <HomePage />,
     },
     {
-        path: `${baseUrl}/repo-list`,
+        path: Routes.repositories,
         element: <ListPage />,
     },
     {
-        path: `${baseUrl}/repo-list/:repoId`,
+        path: Routes.repository,
         element: <CardPage />,
         errorElement: <ErrorPage />,
     },

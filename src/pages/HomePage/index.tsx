@@ -1,12 +1,13 @@
+import { Routes } from '@/app/providers/const'
 import { Link } from 'react-router-dom'
 
-function App() {
+function HomePage() {
     return (
         <>
             <div>Home page</div>
-            <Link to={'/repo-list'}>Go to my repositories</Link>
+            <Link to={Routes.repositories}>Go to my repositories</Link>
         </>
     )
 }
 
-export default App
+export default HomePage

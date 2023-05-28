@@ -6,7 +6,8 @@ import Card from './ui/Card'
 import Loader from '@/shared/ui/Loader'
 
 function RepositoryCard() {
-    const query = useLocation().pathname.slice(11)
+    const queryArr = useLocation().pathname.split('/')
+    const query = queryArr[queryArr.length - 1]
     const [repository, setRepository] = useState<IRepository | null>(null)
 
     useEffect(() => {
