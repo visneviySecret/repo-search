@@ -26,7 +26,7 @@ function RepositoriesList() {
         <Wrapper>
             <Title>GitHub repositories of user: {user}</Title>
 
-            {!isLoading ? (
+            {isLoading ? (
                 <Loader />
             ) : (
                 <List page={page} repositories={repositories} />
